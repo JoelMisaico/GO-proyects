@@ -1,0 +1,35 @@
+{{template "head"}}
+
+<title>Users Page</title>
+    <h1>List Users</h1>
+    <hr>
+
+    <a class="btn btn-primary" href="/users/create">Crear Usuario</a>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{range .}}
+                <tr>
+                  <th scope="row">{{.Id}}</th>
+                  <td>{{.Nombre}}</td>
+                  <td>{{.Email}}</td>
+                  <td>
+                    <a class="btn btn-warning" href="/users/update?id={{.Id}}">Actualizar</a>
+                    <a class="btn btn-danger" href="/users/delete?id={{.Id}}">Eliminar</a>
+                  </td>
+                  {{end}}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{{template "footer"}}

@@ -1,0 +1,22 @@
+{{template "head"}}
+<title>Create Page</title>
+    <h1>Create User Page</h1>
+    <hr>
+
+    <form method="post" action="/users/create">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" placeholder="Juan Perez" required>
+          </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="correo@mail.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="pass" class="form-label">Password</label>
+          <input type="password" class="form-control" name="pass" required>
+        </div>
+        <button type="submit" class="btn btn-success">Registrar Usuario</button>
+    </form>
+
+{{template "footer"}}
